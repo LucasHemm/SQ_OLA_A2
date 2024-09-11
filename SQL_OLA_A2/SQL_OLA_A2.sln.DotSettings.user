@@ -1,4 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\lijo2\AppData\Local\JetBrains\Rider2024.2\resharper-host\temp\Rider\vAny\CoverageData\_SQL_OLA_A2.54982033\Snapshot\snapshot.utdcvr</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a79aae44_002D686f_002D448f_002D8c0e_002Da157d5ec7f74/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ShouldCreateTask" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::71D9A8B4-EB98-45C4-8171-AF7CCE79709C::net8.0::SQ_OLA_A2_TEST.UnitTests.ShouldCreateTask&lt;/TestId&gt;&#xD;
@@ -8,5 +9,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::71D9A8B4-EB98-45C4-8171-AF7CCE79709C::net8.0::SQ_OLA_A2_TEST.UnitTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::71D9A8B4-EB98-45C4-8171-AF7CCE79709C::net8.0::SQ_OLA_A2_TEST.IntegrationTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::71D9A8B4-EB98-45C4-8171-AF7CCE79709C::net8.0::SQL_OLA_A2.Tests.TaskApiTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
