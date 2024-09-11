@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 
 namespace SQL_OLA_A2;
 
@@ -8,6 +9,18 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        
+        // Add the ApplicationDbContext with SQL Server configuration
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+        // Register TaskFacade as a scoped service
+        builder.Services.AddScoped<TaskFacade>();
+
+        // Add controllers to the service container
+        builder.Services.AddControllers();
+
+        // Add authorization service
         builder.Services.AddAuthorization();
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -27,25 +40,8 @@ public class Program
 
         app.UseAuthorization();
 
-        var summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-            {
-                var forecast = Enumerable.Range(1, 5).Select(index =>
-                        new WeatherForecast
-                        {
-                            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                            TemperatureC = Random.Shared.Next(-20, 55),
-                            Summary = summaries[Random.Shared.Next(summaries.Length)]
-                        })
-                    .ToArray();
-                return forecast;
-            })
-            .WithName("GetWeatherForecast")
-            .WithOpenApi();
+        // Map controllers to handle API requests
+        app.MapControllers();
 
         app.Run();
     }
