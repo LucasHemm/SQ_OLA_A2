@@ -1,0 +1,6 @@
+@SQL_OLA_A2_HostAddress = http://localhost:5234
+
+GET {{SQL_OLA_A2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
