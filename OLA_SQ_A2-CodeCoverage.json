@@ -1,0 +1,897 @@
+﻿{
+  "DotCoverVersion": "2024.2.3",
+  "Kind": "SolutionRoot",
+  "CoveredStatements": 417,
+  "TotalStatements": 430,
+  "CoveragePercent": 97,
+  "Children": [
+    {
+      "Kind": "Project",
+      "Name": "SQ_OLA_A2_TEST",
+      "CoveredStatements": 245,
+      "TotalStatements": 245,
+      "CoveragePercent": 100,
+      "Children": [
+        {
+          "Kind": "Namespace",
+          "Name": "SQ_OLA_A2_TEST",
+          "CoveredStatements": 120,
+          "TotalStatements": 120,
+          "CoveragePercent": 100,
+          "Children": [
+            {
+              "Kind": "Type",
+              "Name": "IntegrationTests",
+              "CoveredStatements": 75,
+              "TotalStatements": 75,
+              "CoveragePercent": 100,
+              "Children": [
+                {
+                  "Kind": "Constructor",
+                  "Name": "IntegrationTests()",
+                  "CoveredStatements": 8,
+                  "TotalStatements": 8,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldAddTask():void",
+                  "CoveredStatements": 8,
+                  "TotalStatements": 8,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldCreateAndPersistTask():void",
+                  "CoveredStatements": 10,
+                  "TotalStatements": 10,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldDeleteTask():void",
+                  "CoveredStatements": 8,
+                  "TotalStatements": 8,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldGetAllTasks():void",
+                  "CoveredStatements": 11,
+                  "TotalStatements": 11,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldGetTaskById():void",
+                  "CoveredStatements": 7,
+                  "TotalStatements": 7,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldSaveTask():void",
+                  "CoveredStatements": 10,
+                  "TotalStatements": 10,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldUpdateAndPersistTask():void",
+                  "CoveredStatements": 13,
+                  "TotalStatements": 13,
+                  "CoveragePercent": 100
+                }
+              ]
+            },
+            {
+              "Kind": "Type",
+              "Name": "UnitTests",
+              "CoveredStatements": 45,
+              "TotalStatements": 45,
+              "CoveragePercent": 100,
+              "Children": [
+                {
+                  "Kind": "Type",
+                  "Name": "FakeTask",
+                  "CoveredStatements": 3,
+                  "TotalStatements": 3,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "Constructor",
+                      "Name": "FakeTask(string,DateTime,bool,string)",
+                      "CoveredStatements": 3,
+                      "TotalStatements": 3,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Constructor",
+                  "Name": "UnitTests()",
+                  "CoveredStatements": 6,
+                  "TotalStatements": 6,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldCreateTask():void",
+                  "CoveredStatements": 8,
+                  "TotalStatements": 8,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldMarkTaskAsFinished():void",
+                  "CoveredStatements": 6,
+                  "TotalStatements": 6,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldMarkTaskAsUnfinished():void",
+                  "CoveredStatements": 6,
+                  "TotalStatements": 6,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldUpdateDeadline():void",
+                  "CoveredStatements": 7,
+                  "TotalStatements": 7,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "ShouldUpdateTask():void",
+                  "CoveredStatements": 9,
+                  "TotalStatements": 9,
+                  "CoveragePercent": 100
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Kind": "Namespace",
+          "Name": "SQL_OLA_A2.Tests",
+          "CoveredStatements": 125,
+          "TotalStatements": 125,
+          "CoveragePercent": 100,
+          "Children": [
+            {
+              "Kind": "Type",
+              "Name": "TaskApiTests",
+              "CoveredStatements": 110,
+              "TotalStatements": 110,
+              "CoveragePercent": 100,
+              "Children": [
+                {
+                  "Kind": "Constructor",
+                  "Name": "TaskApiTests(TestWebApplicationFactory)",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "CreateTask_ReturnsCreatedTask():void",
+                  "CoveredStatements": 8,
+                  "TotalStatements": 8,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "InternalCompiledMethod",
+                      "Name": "MoveNext():void",
+                      "CoveredStatements": 8,
+                      "TotalStatements": 8,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "DeleteTask_ReturnsNoContent_WhenTaskExists():void",
+                  "CoveredStatements": 10,
+                  "TotalStatements": 10,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "InternalCompiledMethod",
+                      "Name": "MoveNext():void",
+                      "CoveredStatements": 10,
+                      "TotalStatements": 10,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "GetAllTasks_ReturnsSuccessStatusCode():void",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "InternalCompiledMethod",
+                      "Name": "MoveNext():void",
+                      "CoveredStatements": 4,
+                      "TotalStatements": 4,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "GetTaskById_ReturnsTask_WhenIdExists():void",
+                  "CoveredStatements": 14,
+                  "TotalStatements": 14,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "InternalCompiledMethod",
+                      "Name": "MoveNext():void",
+                      "CoveredStatements": 14,
+                      "TotalStatements": 14,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "IsTaskOverdue_ReturnsFalse_WhenTaskIsNotOverdue():void",
+                  "CoveredStatements": 12,
+                  "TotalStatements": 12,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "InternalCompiledMethod",
+                      "Name": "MoveNext():void",
+                      "CoveredStatements": 12,
+                      "TotalStatements": 12,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "IsTaskOverdue_ReturnsTrue_WhenTaskIsOverdue():void",
+                  "CoveredStatements": 12,
+                  "TotalStatements": 12,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "InternalCompiledMethod",
+                      "Name": "MoveNext():void",
+                      "CoveredStatements": 12,
+                      "TotalStatements": 12,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "MarkTaskAsFinished_ReturnsNoContent_WhenTaskExists():void",
+                  "CoveredStatements": 14,
+                  "TotalStatements": 14,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "InternalCompiledMethod",
+                      "Name": "MoveNext():void",
+                      "CoveredStatements": 14,
+                      "TotalStatements": 14,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "MarkTaskAsUnfinished_ReturnsNoContent_WhenTaskExists():void",
+                  "CoveredStatements": 14,
+                  "TotalStatements": 14,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "InternalCompiledMethod",
+                      "Name": "MoveNext():void",
+                      "CoveredStatements": 14,
+                      "TotalStatements": 14,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "UpdateTask_ReturnsNoContent_WhenTaskExists():void",
+                  "CoveredStatements": 18,
+                  "TotalStatements": 18,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "InternalCompiledMethod",
+                      "Name": "MoveNext():void",
+                      "CoveredStatements": 18,
+                      "TotalStatements": 18,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Kind": "Type",
+              "Name": "TestWebApplicationFactory",
+              "CoveredStatements": 15,
+              "TotalStatements": 15,
+              "CoveragePercent": 100,
+              "Children": [
+                {
+                  "Kind": "Method",
+                  "Name": "ConfigureWebHost(IWebHostBuilder):void",
+                  "CoveredStatements": 15,
+                  "TotalStatements": 15,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "OwnCoverage",
+                      "CoveredStatements": 3,
+                      "TotalStatements": 3,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "AnonymousMethod",
+                      "Name": "(IServiceCollection):void",
+                      "CoveredStatements": 12,
+                      "TotalStatements": 12,
+                      "CoveragePercent": 100,
+                      "Children": [
+                        {
+                          "Kind": "OwnCoverage",
+                          "CoveredStatements": 8,
+                          "TotalStatements": 8,
+                          "CoveragePercent": 100
+                        },
+                        {
+                          "Kind": "AnonymousMethod",
+                          "Name": "(ServiceDescriptor):bool",
+                          "CoveredStatements": 1,
+                          "TotalStatements": 1,
+                          "CoveragePercent": 100
+                        },
+                        {
+                          "Kind": "AnonymousMethod",
+                          "Name": "(DbContextOptionsBuilder):void",
+                          "CoveredStatements": 3,
+                          "TotalStatements": 3,
+                          "CoveragePercent": 100
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Kind": "Project",
+      "Name": "SQL_OLA_A2",
+      "CoveredStatements": 172,
+      "TotalStatements": 185,
+      "CoveragePercent": 93,
+      "Children": [
+        {
+          "Kind": "Namespace",
+          "Name": "SQL_OLA_A2",
+          "CoveredStatements": 172,
+          "TotalStatements": 185,
+          "CoveragePercent": 93,
+          "Children": [
+            {
+              "Kind": "Namespace",
+              "Name": "Controllers",
+              "CoveredStatements": 49,
+              "TotalStatements": 61,
+              "CoveragePercent": 80,
+              "Children": [
+                {
+                  "Kind": "Type",
+                  "Name": "TaskController",
+                  "CoveredStatements": 49,
+                  "TotalStatements": 61,
+                  "CoveragePercent": 80,
+                  "Children": [
+                    {
+                      "Kind": "Constructor",
+                      "Name": "TaskController(ApplicationDbContext)",
+                      "CoveredStatements": 4,
+                      "TotalStatements": 4,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "Method",
+                      "Name": "CreateTask(TaskDto):ActionResult<Task>",
+                      "CoveredStatements": 4,
+                      "TotalStatements": 4,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "Method",
+                      "Name": "DeleteTask(int):ActionResult",
+                      "CoveredStatements": 6,
+                      "TotalStatements": 8,
+                      "CoveragePercent": 75
+                    },
+                    {
+                      "Kind": "Method",
+                      "Name": "GetAllTasks():ActionResult<List<Task>>",
+                      "CoveredStatements": 4,
+                      "TotalStatements": 4,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "Method",
+                      "Name": "GetTaskById(int):ActionResult<Task>",
+                      "CoveredStatements": 5,
+                      "TotalStatements": 7,
+                      "CoveragePercent": 71
+                    },
+                    {
+                      "Kind": "Method",
+                      "Name": "IsTaskOverdue(int):ActionResult<bool>",
+                      "CoveredStatements": 5,
+                      "TotalStatements": 7,
+                      "CoveragePercent": 71
+                    },
+                    {
+                      "Kind": "Method",
+                      "Name": "MarkTaskAsFinished(int):ActionResult",
+                      "CoveredStatements": 7,
+                      "TotalStatements": 9,
+                      "CoveragePercent": 78
+                    },
+                    {
+                      "Kind": "Method",
+                      "Name": "MarkTaskAsUnfinished(int):ActionResult",
+                      "CoveredStatements": 7,
+                      "TotalStatements": 9,
+                      "CoveragePercent": 78
+                    },
+                    {
+                      "Kind": "Method",
+                      "Name": "UpdateTask(int,TaskDto):ActionResult<Task>",
+                      "CoveredStatements": 7,
+                      "TotalStatements": 9,
+                      "CoveragePercent": 78
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Kind": "Type",
+              "Name": "Program",
+              "CoveredStatements": 19,
+              "TotalStatements": 20,
+              "CoveragePercent": 95,
+              "Children": [
+                {
+                  "Kind": "Method",
+                  "Name": "Main(string[]):void",
+                  "CoveredStatements": 19,
+                  "TotalStatements": 20,
+                  "CoveragePercent": 95,
+                  "Children": [
+                    {
+                      "Kind": "OwnCoverage",
+                      "CoveredStatements": 19,
+                      "TotalStatements": 19,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "AnonymousMethod",
+                      "Name": "(DbContextOptionsBuilder):void",
+                      "CoveredStatements": 0,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Kind": "Type",
+              "Name": "Task",
+              "CoveredStatements": 25,
+              "TotalStatements": 25,
+              "CoveragePercent": 100,
+              "Children": [
+                {
+                  "Kind": "Constructor",
+                  "Name": "Task(string,DateTime,bool,string)",
+                  "CoveredStatements": 7,
+                  "TotalStatements": 7,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Constructor",
+                  "Name": "Task(int,string,string,DateTime,bool)",
+                  "CoveredStatements": 8,
+                  "TotalStatements": 8,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "AutoProperty",
+                  "Name": "Category:string",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 2,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "PropertyGetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "PropertySetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "AutoProperty",
+                  "Name": "Deadline:DateTime",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 2,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "PropertyGetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "PropertySetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "AutoProperty",
+                  "Name": "Description:string",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 2,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "PropertyGetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "PropertySetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "AutoProperty",
+                  "Name": "Id:int",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 2,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "PropertyGetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "PropertySetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "AutoProperty",
+                  "Name": "IsFinished:bool",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 2,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "PropertyGetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "PropertySetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Kind": "Type",
+              "Name": "TaskDto",
+              "CoveredStatements": 10,
+              "TotalStatements": 10,
+              "CoveragePercent": 100,
+              "Children": [
+                {
+                  "Kind": "AutoProperty",
+                  "Name": "Category:string",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 2,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "PropertyGetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "PropertySetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "AutoProperty",
+                  "Name": "Deadline:DateTime",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 2,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "PropertyGetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "PropertySetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "AutoProperty",
+                  "Name": "Description:string",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 2,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "PropertyGetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "PropertySetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "AutoProperty",
+                  "Name": "Id:int",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 2,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "PropertyGetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "PropertySetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                },
+                {
+                  "Kind": "AutoProperty",
+                  "Name": "IsFinished:bool",
+                  "CoveredStatements": 2,
+                  "TotalStatements": 2,
+                  "CoveragePercent": 100,
+                  "Children": [
+                    {
+                      "Kind": "PropertyGetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    },
+                    {
+                      "Kind": "PropertySetter",
+                      "CoveredStatements": 1,
+                      "TotalStatements": 1,
+                      "CoveragePercent": 100
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Kind": "Type",
+              "Name": "TaskFacade",
+              "CoveredStatements": 47,
+              "TotalStatements": 47,
+              "CoveragePercent": 100,
+              "Children": [
+                {
+                  "Kind": "Constructor",
+                  "Name": "TaskFacade(ApplicationDbContext)",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "AddTask(string,DateTime,bool,string):Task",
+                  "CoveredStatements": 5,
+                  "TotalStatements": 5,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "CreateTask(string,DateTime,bool,string):Task",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "DeleteTask(Task):void",
+                  "CoveredStatements": 3,
+                  "TotalStatements": 3,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "GetAllTasks():List<Task>",
+                  "CoveredStatements": 3,
+                  "TotalStatements": 3,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "GetTaskById(int):Task",
+                  "CoveredStatements": 3,
+                  "TotalStatements": 3,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "IsOverdue(Task):bool",
+                  "CoveredStatements": 3,
+                  "TotalStatements": 3,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "MarkAsFinished(Task):Task",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "MarkAsUnfinished(Task):Task",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "SaveTask(Task):void",
+                  "CoveredStatements": 3,
+                  "TotalStatements": 3,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "UpdateDeadline(Task,DateTime):Task",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "UpdateTask(Task,string,DateTime,bool,string):Task",
+                  "CoveredStatements": 7,
+                  "TotalStatements": 7,
+                  "CoveragePercent": 100
+                }
+              ]
+            },
+            {
+              "Kind": "Type",
+              "Name": "TaskMapper",
+              "CoveredStatements": 22,
+              "TotalStatements": 22,
+              "CoveragePercent": 100,
+              "Children": [
+                {
+                  "Kind": "Constructor",
+                  "Name": "TaskMapper(ApplicationDbContext)",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "AddTask(Task):void",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "DeleteTask(Task):void",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "GetAllTasks():List<Task>",
+                  "CoveredStatements": 3,
+                  "TotalStatements": 3,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "GetTaskById(int):Task",
+                  "CoveredStatements": 3,
+                  "TotalStatements": 3,
+                  "CoveragePercent": 100
+                },
+                {
+                  "Kind": "Method",
+                  "Name": "UpdateTask(Task):void",
+                  "CoveredStatements": 4,
+                  "TotalStatements": 4,
+                  "CoveragePercent": 100
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
