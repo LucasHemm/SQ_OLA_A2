@@ -111,6 +111,10 @@ namespace SQL_OLA_A2
             {
                 throw new ArgumentException("Description cannot be null or empty.");
             }
+            if (description.Length > 200)
+            {
+                throw new ArgumentException("Description cannot exceed 200 characters.");
+            }
             if (string.IsNullOrWhiteSpace(category))
             {
                 throw new ArgumentException("Category cannot be null or empty.");
@@ -120,5 +124,6 @@ namespace SQL_OLA_A2
                 throw new ArgumentException("Invalid deadline. Please provide a valid date and time.");
             }
         }
+
     }
 }
