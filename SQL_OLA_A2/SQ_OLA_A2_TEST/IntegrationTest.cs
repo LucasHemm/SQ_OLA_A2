@@ -76,8 +76,7 @@ public class IntegrationTests
         Task task = taskFacade.CreateTask("Test", now, false, "Test");
         taskFacade.SaveTask(task);
         taskFacade.DeleteTask(task);
-        Task taskById = taskFacade.GetTaskById(task.Id);
-        Assert.Null(taskById);
+        Assert.Throws<KeyNotFoundException>(() => taskFacade.GetTaskById(task.Id));
     }
     
     [Fact]
