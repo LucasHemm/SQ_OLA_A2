@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\lijo2\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\SpecificationTests.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.EntityFrameworkCore;
+using SQL_OLA_A2;
+using Task = SQL_OLA_A2.Task;
+
+namespace ola_sq_a1;
+
+public class SpecificationTests
+{
+    private TaskFacade taskFacade;
+
+    public SpecificationTests()
+    {
+        var options = new DbContextOptionsBuilder&lt;ApplicationDbContext&gt;()
+            .UseInMemoryDatabase(databaseName: &quot;TestDatabase&quot;)
+            .Options;
+
+        var context = new ApplicationDbContext(options);
+        taskFacade = new TaskFacade(context);
+    }
+    
+    [Fact]
+    public void ShouldReturnTrueIfTaskIsOverdueAndNotFinished()
+    {
+        DateTime now = DateTime.Now;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now.AddMinutes(-1), false, &quot;Test&quot;);
+        Assert.True(taskFacade.IsOverdue(task));
+    }
+    
+    [Fact]
+    public void ShouldReturnFalseIfTaskIsNotOverdueAndNotFinished()
+    {
+        DateTime now = DateTime.Now;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now.AddMinutes(1), false, &quot;Test&quot;);
+        Assert.False(taskFacade.IsOverdue(task));
+    }
+    
+    [Fact]
+    public void ShouldReturnFalseIfTaskIsOverdueAndFinished()
+    {
+        DateTime now = DateTime.Now;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now.AddMinutes(-1), true, &quot;Test&quot;);
+        Assert.False(taskFacade.IsOverdue(task));
+    }
+    
+    [Fact]
+    public void ShouldReturnFalseIfNotOverdueAndFinished()
+    {
+        DateTime now = DateTime.Now;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now.AddMinutes(1), true, &quot;Test&quot;);
+        Assert.False(taskFacade.IsOverdue(task));
+    }
+    
+    [Fact]
+    public void ShouldReturnTrueIfTaskIsDueNowAndNotFinished()
+    {
+        DateTime now = DateTime.Now;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now, false, &quot;Test&quot;);
+        Assert.True(taskFacade.IsOverdue(task)); 
+    }
+
+    [Fact]
+    public void ShouldThrowArgumentExceptionIfDescriptionIsOver200Characters()
+    {
+        DateTime now = DateTime.Now;
+        Assert.Throws&lt;ArgumentException&gt;(() =&gt; taskFacade.CreateTask(new string(&#39;a&#39;, 201), now, false, &quot;Test&quot;));
+    }
+    
+    [Fact]
+    public void ShouldNotThrowArgumentExceptionIfDescriptionIs200Characters()
+    {
+        DateTime now = DateTime.Now;
+        taskFacade.CreateTask(new string(&#39;a&#39;, 200), now, false, &quot;Test&quot;);
+    }
+    
+    [Fact]
+    public void ShouldNotThrowArgumentExceptionIfDescriptionIs1Character()
+    {
+        DateTime now = DateTime.Now;
+        taskFacade.CreateTask(&quot;a&quot;, now, false, &quot;Test&quot;);
+    }
+    
+    [Fact]
+    public void ShouldThrowArgumentExceptionIfDescriptionIs0Characters()
+    {
+        DateTime now = DateTime.Now;
+        Assert.Throws&lt;ArgumentException&gt;(() =&gt; taskFacade.CreateTask(&quot;&quot;, now, false, &quot;Test&quot;));
+    }
+    
+    [Fact]
+    public void ShouldNotThrowArgumentExceptionIfCategoryIs100Characters()
+    {
+        DateTime now = DateTime.Now;
+        taskFacade.CreateTask(&quot;Test&quot;, now, false, new string(&#39;a&#39;, 100));
+    }
+
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[11,5,11,32,1],[12,5,12,6,1],[13,9,15,22,1],[17,9,17,57,1],[18,9,18,46,1],[19,5,19,6,1],[23,5,23,6,1],[24,9,24,37,1],[25,9,25,86,1],[26,9,26,49,1],[27,5,27,6,1],[31,5,31,6,1],[32,9,32,37,1],[33,9,33,85,1],[34,9,34,50,1],[35,5,35,6,1],[39,5,39,6,1],[40,9,40,37,1],[41,9,41,85,1],[42,9,42,50,1],[43,5,43,6,1],[47,5,47,6,1],[48,9,48,37,1],[49,9,49,84,1],[50,9,50,50,1],[51,5,51,6,1],[55,5,55,6,1],[56,9,56,37,1],[57,9,57,71,1],[58,9,58,49,1],[59,5,59,6,1],[63,5,63,6,1],[64,9,64,37,1],[65,9,65,48,1],[65,48,65,111,1],[65,111,65,113,1],[66,5,66,6,1],[70,5,70,6,1],[71,9,71,37,1],[72,9,72,73,1],[73,5,73,6,1],[77,5,77,6,1],[78,9,78,37,1],[79,9,79,56,1],[80,5,80,6,1],[84,5,84,6,1],[85,9,85,37,1],[86,9,86,48,1],[86,48,86,93,1],[86,93,86,95,1],[87,5,87,6,1],[91,5,91,6,1],[92,9,92,37,1],[93,9,93,73,1],[94,5,94,6,1]]);
+    </script>
+  </body>
+</html>

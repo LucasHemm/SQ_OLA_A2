@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\lijo2\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\TestWebApplicationFactory.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using SQL_OLA_A2;
+
+namespace SQL_OLA_A2.Tests
+{
+    public class TestWebApplicationFactory : WebApplicationFactory&lt;Program&gt;
+    {
+        protected override void ConfigureWebHost(IWebHostBuilder builder)
+        {
+            builder.ConfigureServices(services =&gt;
+            {
+                // Remove the application DB context registration.
+                var descriptor = services.SingleOrDefault(
+                    d =&gt; d.ServiceType == typeof(DbContextOptions&lt;ApplicationDbContext&gt;));
+                
+                if (descriptor != null)
+                {
+                    services.Remove(descriptor);
+                }
+
+                // Add an in-memory database for testing
+                services.AddDbContext&lt;ApplicationDbContext&gt;(options =&gt;
+                {
+                    options.UseInMemoryDatabase(&quot;InMemoryDbForTesting&quot;);
+                });
+
+                // Optionally, you might need to reapply the migrations or seed the database here
+            });
+        }
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[12,9,12,10,1],[13,13,14,13,1],[14,13,14,14,1],[14,14,16,17,1],[16,17,17,26,1],[17,26,17,89,1],[17,89,17,91,1],[17,91,19,17,1],[19,17,19,40,1],[19,40,20,17,1],[20,17,20,18,1],[20,18,21,21,1],[21,21,21,49,1],[21,49,22,17,1],[22,17,22,18,1],[22,18,25,17,1],[25,17,26,17,1],[26,17,26,18,1],[26,18,27,21,1],[27,21,27,73,1],[27,73,28,17,1],[28,17,28,18,1],[28,18,28,20,1],[28,20,31,13,1],[31,13,31,14,1],[31,14,31,16,1],[32,9,32,10,1]]);
+    </script>
+  </body>
+</html>

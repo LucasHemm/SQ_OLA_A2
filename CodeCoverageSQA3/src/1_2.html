@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\lijo2\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\IntegrationTest.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using SQL_OLA_A2;
+using Task = SQL_OLA_A2.Task;
+
+
+namespace SQ_OLA_A2_TEST;
+using Microsoft.EntityFrameworkCore;
+
+public class IntegrationTests
+{
+    
+    //Mocking the database
+    
+    public IntegrationTests()
+    {
+        var options = new DbContextOptionsBuilder&lt;ApplicationDbContext&gt;()
+            .UseInMemoryDatabase(databaseName: &quot;TestDatabase&quot;)
+            .Options;
+
+        var context = new ApplicationDbContext(options);
+        taskMapper = new TaskMapper(context);
+        taskFacade = new TaskFacade(context);
+        //Clear the database before each test
+        context.Database.EnsureDeleted();
+    }
+    
+    private TaskMapper taskMapper;
+    private TaskFacade taskFacade;
+    
+    
+    
+    [Fact]
+    public void ShouldCreateAndPersistTask()
+    {
+        //Test CreateTask
+        DateTime now = DateTime.Now;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now, false, &quot;Test&quot;);
+        taskMapper.AddTask(task);
+        Task taskFromDb = taskMapper.GetTaskById(task.Id);
+        Assert.Equal(&quot;Test&quot;, taskFromDb.Description);
+        Assert.Equal(now, taskFromDb.Deadline);
+        Assert.False(taskFromDb.IsFinished);
+        Assert.Equal(&quot;Test&quot;, taskFromDb.Category);
+    }
+    
+    [Fact]
+    public void ShouldUpdateAndPersistTask()
+    {
+        //Test UpdateTask
+        DateTime now = DateTime.Now;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now, false, &quot;Test&quot;);
+        taskMapper.AddTask(task);
+        Task taskFromDb = taskMapper.GetTaskById(task.Id);
+        task = taskFacade.UpdateTask(taskFromDb, &quot;Test2&quot;, now, true, &quot;Test2&quot;);
+        taskMapper.UpdateTask(task);
+        Task updatedTask = taskMapper.GetTaskById(task.Id);
+        Assert.Equal(&quot;Test2&quot;, updatedTask.Description);
+        Assert.Equal(now, updatedTask.Deadline);
+        Assert.True(updatedTask.IsFinished);
+        Assert.Equal(&quot;Test2&quot;, updatedTask.Category);
+    }
+    
+    [Fact]
+    public void ShouldGetTaskById()
+    {
+        DateTime now = DateTime.Now;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now, false, &quot;Test&quot;);
+        taskFacade.SaveTask(task);
+        Task taskById = taskFacade.GetTaskById(task.Id);
+        Assert.Equal(task, taskById);
+    }
+    
+    [Fact]
+    public void ShouldDeleteTask()
+    {
+        DateTime now = DateTime.Now;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now, false, &quot;Test&quot;);
+        taskFacade.SaveTask(task);
+        taskFacade.DeleteTask(task);
+        Assert.Throws&lt;KeyNotFoundException&gt;(() =&gt; taskFacade.GetTaskById(task.Id));
+    }
+    
+    [Fact]
+    public void ShouldGetAllTasks()
+    {
+        DateTime now = DateTime.Now;
+        Task task1 = taskFacade.CreateTask(&quot;Test1&quot;, now, false, &quot;Test&quot;);
+        taskFacade.SaveTask(task1);
+        Task task2 = taskFacade.CreateTask(&quot;Test2&quot;, now, false, &quot;Test&quot;);
+        taskFacade.SaveTask(task2);
+        Task task3 = taskFacade.CreateTask(&quot;Test3&quot;, now, false, &quot;Test&quot;);
+        taskFacade.SaveTask(task3);
+        List&lt;Task&gt; tasks = taskFacade.GetAllTasks();
+        Assert.Equal(3, tasks.Count);
+    }
+    
+    [Fact]
+    public void ShouldSaveTask()
+    {
+        DateTime now = DateTime.Now;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now, false, &quot;Test&quot;);
+        taskFacade.SaveTask(task);
+        Task taskFromDb = taskMapper.GetTaskById(task.Id);
+        Assert.Equal(&quot;Test&quot;, taskFromDb.Description);
+        Assert.Equal(now, taskFromDb.Deadline);
+        Assert.False(taskFromDb.IsFinished);
+        Assert.Equal(&quot;Test&quot;, taskFromDb.Category);
+    }
+    
+    [Fact]
+    public void ShouldAddTask()
+    {
+        DateTime now = DateTime.Now;
+        int count = taskFacade.GetAllTasks().Count;
+        Task task = taskFacade.CreateTask(&quot;Test&quot;, now, false, &quot;Test&quot;);
+        taskFacade.AddTask(&quot;Test&quot;, now, false, &quot;Test&quot;);
+        int newCount = taskFacade.GetAllTasks().Count;
+        Assert.Equal(count + 1 , newCount);
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[13,5,13,30,1],[14,5,14,6,1],[15,9,17,22,1],[19,9,19,57,1],[20,9,20,46,1],[21,9,21,46,1],[23,9,23,42,1],[24,5,24,6,1],[33,5,33,6,1],[35,9,35,37,1],[36,9,36,71,1],[37,9,37,34,1],[38,9,38,59,1],[39,9,39,54,1],[40,9,40,48,1],[41,9,41,45,1],[42,9,42,51,1],[43,5,43,6,1],[47,5,47,6,1],[49,9,49,37,1],[50,9,50,71,1],[51,9,51,34,1],[52,9,52,59,1],[53,9,53,79,1],[54,9,54,37,1],[55,9,55,60,1],[56,9,56,56,1],[57,9,57,49,1],[58,9,58,45,1],[59,9,59,53,1],[60,5,60,6,1],[64,5,64,6,1],[65,9,65,37,1],[66,9,66,71,1],[67,9,67,35,1],[68,9,68,57,1],[69,9,69,38,1],[70,5,70,6,1],[74,5,74,6,1],[75,9,75,37,1],[76,9,76,71,1],[77,9,77,35,1],[78,9,78,37,1],[79,9,79,51,1],[79,51,79,82,1],[79,82,79,84,1],[80,5,80,6,1],[84,5,84,6,1],[85,9,85,37,1],[86,9,86,73,1],[87,9,87,36,1],[88,9,88,73,1],[89,9,89,36,1],[90,9,90,73,1],[91,9,91,36,1],[92,9,92,53,1],[93,9,93,38,1],[94,5,94,6,1],[98,5,98,6,1],[99,9,99,37,1],[100,9,100,71,1],[101,9,101,35,1],[102,9,102,59,1],[103,9,103,54,1],[104,9,104,48,1],[105,9,105,45,1],[106,9,106,51,1],[107,5,107,6,1],[111,5,111,6,1],[112,9,112,37,1],[113,9,113,52,1],[114,9,114,71,1],[115,9,115,56,1],[116,9,116,55,1],[117,9,117,44,1],[118,5,118,6,1]]);
+    </script>
+  </body>
+</html>

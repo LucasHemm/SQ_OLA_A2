@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\lijo2\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\TaskMapper.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+namespace SQL_OLA_A2;
+
+public class TaskMapper
+{
+    private ApplicationDbContext context;
+    
+    public TaskMapper(ApplicationDbContext context)
+    {
+        this.context = context;
+    }
+    
+    //This method creates takes a task object and creates a new task in the database
+    public void AddTask(Task task)
+    {
+        context.Tasks.Add(task);
+        context.SaveChanges();
+    }
+    
+    //This method takes a task object and updates the task in the database
+    public void UpdateTask(Task task)
+    {
+        context.Tasks.Update(task);
+        context.SaveChanges();
+    }   
+    
+    //This method takes a task object and deletes the task from the database
+    public void DeleteTask(Task task)
+    {
+        context.Tasks.Remove(task);
+        context.SaveChanges();
+    }
+
+    public List&lt;Task&gt; GetAllTasks()
+    {
+        return context.Tasks.ToList();
+    }
+    
+    //This method takes an id and returns the task with that id
+    public Task GetTaskById(int id)
+    {
+        return context.Tasks.Find(id);
+    }
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[7,5,7,52,1],[8,5,8,6,1],[9,9,9,32,1],[10,5,10,6,1],[14,5,14,6,1],[15,9,15,33,1],[16,9,16,31,1],[17,5,17,6,1],[21,5,21,6,1],[22,9,22,36,1],[23,9,23,31,1],[24,5,24,6,1],[28,5,28,6,1],[29,9,29,36,1],[30,9,30,31,1],[31,5,31,6,1],[34,5,34,6,1],[35,9,35,39,1],[36,5,36,6,1],[40,5,40,6,1],[41,9,41,39,1],[42,5,42,6,1]]);
+    </script>
+  </body>
+</html>

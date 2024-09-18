@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\lijo2\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\Controllers\TaskController.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System;
+
+namespace SQL_OLA_A2.Controllers
+{
+    [Route(&quot;api/[controller]&quot;)]
+    [ApiController]
+    public class TaskController : ControllerBase
+    {
+        private readonly TaskFacade _taskFacade;
+
+        // Constructor injection of TaskFacade
+        public TaskController(ApplicationDbContext context)
+        {
+            _taskFacade = new TaskFacade(context);
+        }
+
+        // GET: api/task
+        [HttpGet]
+        public ActionResult&lt;List&lt;Task&gt;&gt; GetAllTasks()
+        {
+            var tasks = _taskFacade.GetAllTasks();
+            return Ok(tasks);
+        }
+
+        // GET: api/task/{id}
+        [HttpGet(&quot;{id}&quot;)]
+        public ActionResult&lt;Task&gt; GetTaskById(int id)
+        {
+            var task = _taskFacade.GetTaskById(id);
+            if (task == null)
+            {
+                return NotFound();
+            }
+            return Ok(task);
+        }
+
+        // POST: api/task
+        [HttpPost]
+        public ActionResult&lt;Task&gt; CreateTask([FromBody] TaskDto taskDto)
+        {
+            var task = _taskFacade.AddTask(taskDto.Description, taskDto.Deadline, taskDto.IsFinished, taskDto.Category);
+            return CreatedAtAction(nameof(GetTaskById), new { id = task.Id }, task);
+        }
+
+        // PUT: api/task/{id}
+        [HttpPut(&quot;{id}&quot;)]
+        public ActionResult&lt;Task&gt; UpdateTask(int id, [FromBody] TaskDto taskDto)
+        {
+            var task = _taskFacade.GetTaskById(id);
+            if (task == null)
+            {
+                return NotFound();
+            }
+            _taskFacade.UpdateTask(task, taskDto.Description, taskDto.Deadline, taskDto.IsFinished, taskDto.Category);
+            _taskFacade.SaveTask(task);
+            return NoContent();
+        }
+
+        // PUT: api/task/{id}/finish
+        [HttpPut(&quot;{id}/finish&quot;)]
+        public ActionResult MarkTaskAsFinished(int id)
+        {
+            var task = _taskFacade.GetTaskById(id);
+            if (task == null)
+            {
+                return NotFound();
+            }
+            _taskFacade.MarkAsFinished(task);
+            _taskFacade.SaveTask(task);
+            return NoContent();
+        }
+
+        // PUT: api/task/{id}/unfinished
+        [HttpPut(&quot;{id}/unfinished&quot;)]
+        public ActionResult MarkTaskAsUnfinished(int id)
+        {
+            var task = _taskFacade.GetTaskById(id);
+            if (task == null)
+            {
+                return NotFound();
+            }
+            _taskFacade.MarkAsUnfinished(task);
+            _taskFacade.SaveTask(task);
+            return NoContent();
+        }
+
+        // DELETE: api/task/{id}
+        [HttpDelete(&quot;{id}&quot;)]
+        public ActionResult DeleteTask(int id)
+        {
+            var task = _taskFacade.GetTaskById(id);
+            if (task == null)
+            {
+                return NotFound();
+            }
+            _taskFacade.DeleteTask(task);
+            return NoContent();
+        }
+
+        // GET: api/task/{id}/overdue
+        [HttpGet(&quot;{id}/overdue&quot;)]
+        public ActionResult&lt;bool&gt; IsTaskOverdue(int id)
+        {
+            var task = _taskFacade.GetTaskById(id);
+            if (task == null)
+            {
+                return NotFound();
+            }
+            return Ok(_taskFacade.IsOverdue(task));
+        }
+    }
+}
+
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[14,9,14,60,1],[15,9,15,10,1],[16,13,16,51,1],[17,9,17,10,1],[22,9,22,10,1],[23,13,23,51,1],[24,13,24,30,1],[25,9,25,10,1],[30,9,30,10,1],[31,13,31,52,1],[32,13,32,30,1],[33,13,33,14,0],[34,17,34,35,0],[36,13,36,29,1],[37,9,37,10,1],[42,9,42,10,1],[43,13,43,121,1],[44,13,44,85,1],[45,9,45,10,1],[50,9,50,10,1],[51,13,51,52,1],[52,13,52,30,1],[53,13,53,14,0],[54,17,54,35,0],[56,13,56,119,1],[57,13,57,40,1],[58,13,58,32,1],[59,9,59,10,1],[64,9,64,10,1],[65,13,65,52,1],[66,13,66,30,1],[67,13,67,14,0],[68,17,68,35,0],[70,13,70,46,1],[71,13,71,40,1],[72,13,72,32,1],[73,9,73,10,1],[78,9,78,10,1],[79,13,79,52,1],[80,13,80,30,1],[81,13,81,14,0],[82,17,82,35,0],[84,13,84,48,1],[85,13,85,40,1],[86,13,86,32,1],[87,9,87,10,1],[92,9,92,10,1],[93,13,93,52,1],[94,13,94,30,1],[95,13,95,14,0],[96,17,96,35,0],[98,13,98,42,1],[99,13,99,32,1],[100,9,100,10,1],[105,9,105,10,1],[106,13,106,52,1],[107,13,107,30,1],[108,13,108,14,0],[109,17,109,35,0],[111,13,111,52,1],[112,9,112,10,1]]);
+    </script>
+  </body>
+</html>
