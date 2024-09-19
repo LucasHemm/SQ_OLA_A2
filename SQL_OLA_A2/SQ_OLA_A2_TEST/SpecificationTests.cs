@@ -69,14 +69,14 @@ public class SpecificationTests
     public void ShouldNotThrowArgumentExceptionIfDescriptionIs200Characters()
     {
         DateTime now = DateTime.Now;
-        taskFacade.CreateTask(new string('a', 200), now, false, "Test");
+        Assert.Throws<ArgumentException>(() => taskFacade.CreateTask(new string('a', 200), now, false, "Test"));
     }
     
     [Fact]
     public void ShouldNotThrowArgumentExceptionIfDescriptionIs1Character()
     {
         DateTime now = DateTime.Now;
-        taskFacade.CreateTask("a", now, false, "Test");
+        Assert.Throws<ArgumentException>(() => taskFacade.CreateTask("a", now, false, "Test"));
     }
     
     [Fact]
@@ -90,7 +90,7 @@ public class SpecificationTests
     public void ShouldNotThrowArgumentExceptionIfCategoryIs100Characters()
     {
         DateTime now = DateTime.Now;
-        taskFacade.CreateTask("Test", now, false, new string('a', 100));
+        Assert.Throws<ArgumentException>(() => taskFacade.CreateTask("Test", now, false, new string('a', 100)));
     }
 
 }
