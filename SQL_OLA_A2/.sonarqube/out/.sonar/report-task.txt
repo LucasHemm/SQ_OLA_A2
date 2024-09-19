@@ -1,0 +1,6 @@
+projectKey=SQ_OLA_A3
+serverUrl=http://localhost:9000
+serverVersion=10.6.0.92116
+dashboardUrl=http://localhost:9000/dashboard?id=SQ_OLA_A3
+ceTaskId=098f0f47-9990-4008-9b60-43c72a85eeb8
+ceTaskUrl=http://localhost:9000/api/ce/task?id=098f0f47-9990-4008-9b60-43c72a85eeb8

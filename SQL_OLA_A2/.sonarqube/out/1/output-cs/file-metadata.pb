@@ -1,0 +1,10 @@
+ä
+C:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\obj\Debug\net8.0\SQ_OLA_A2_TEST.GlobalUsings.g.csutf-8ô
+çC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8}
+rC:\Users\marcu\.nuget\packages\microsoft.net.test.sdk\17.8.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.csutf-8i
+`C:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\IntegrationTest.csutf-8à
+}C:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\obj\Debug\net8.0\SQ_OLA_A2_TEST.AssemblyInfo.csutf-8c
+ZC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\UnitTests.csutf-8l
+cC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\SpecificationTests.csutf-8f
+]C:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\TaskApiTests.csutf-8s
+jC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQ_OLA_A2_TEST\TestWebApplicationFactory.csutf-8
