@@ -9,7 +9,7 @@ namespace SQ_OLA_A2_TEST
 {
     public class UnitTests
     {
-        private TaskFacade taskFacade;
+        private TaskFacade _taskFacade;
 
         public UnitTests()
         {
@@ -18,7 +18,7 @@ namespace SQ_OLA_A2_TEST
                 .Options;
 
             var context = new ApplicationDbContext(options);
-            taskFacade = new TaskFacade(context);
+            _taskFacade = new TaskFacade(context);
         }
 
         [Fact]
@@ -26,7 +26,7 @@ namespace SQ_OLA_A2_TEST
         {
             // Test CreateTask
             DateTime now = DateTime.Now;
-            Task task = taskFacade.CreateTask("Test", now, false, "Test");
+            Task task = _taskFacade.CreateTask("Test", now, false, "Test");
             Assert.Equal("Test", task.Description);
             Assert.Equal(now, task.Deadline);
             Assert.False(task.IsFinished);
@@ -43,7 +43,7 @@ namespace SQ_OLA_A2_TEST
             var mockTask = new Mock<Task>("Test", now, false, "Test");
             mockTask.SetupAllProperties();
 
-            var updatedTask = taskFacade.UpdateTask(mockTask.Object, "Test2", now, true, "Test2");
+            var updatedTask = _taskFacade.UpdateTask(mockTask.Object, "Test2", now, true, "Test2");
 
             Assert.Equal("Test2", updatedTask.Description);
             Assert.Equal(now, updatedTask.Deadline);
@@ -56,8 +56,8 @@ namespace SQ_OLA_A2_TEST
         {
             // Test MarkAsFinished
             DateTime now = DateTime.Now;
-            Task task = taskFacade.CreateTask("Test", now, false, "Test");
-            task = taskFacade.MarkAsFinished(task);
+            Task task = _taskFacade.CreateTask("Test", now, false, "Test");
+            task = _taskFacade.MarkAsFinished(task);
             Assert.True(task.IsFinished);
         }
 
@@ -66,8 +66,8 @@ namespace SQ_OLA_A2_TEST
         {
             // Test MarkAsUnfinished
             DateTime now = DateTime.Now;
-            Task task = taskFacade.CreateTask("Test", now, true, "Test");
-            task = taskFacade.MarkAsUnfinished(task);
+            Task task = _taskFacade.CreateTask("Test", now, true, "Test");
+            task = _taskFacade.MarkAsUnfinished(task);
             Assert.False(task.IsFinished);
         }
 
@@ -79,7 +79,7 @@ namespace SQ_OLA_A2_TEST
             mockTask.SetupAllProperties();
             DateTime newDate = now.AddDays(1);
 
-            var updatedTask = taskFacade.UpdateDeadline(mockTask.Object, newDate);
+            var updatedTask = _taskFacade.UpdateDeadline(mockTask.Object, newDate);
             Assert.Equal(newDate, updatedTask.Deadline);
         }
     }
