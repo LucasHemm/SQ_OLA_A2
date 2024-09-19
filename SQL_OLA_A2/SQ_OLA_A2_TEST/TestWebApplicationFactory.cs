@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using SQL_OLA_A2;
 
-namespace SQL_OLA_A2.Tests
+namespace SQ_OLA_A2_TEST
 {
     public class TestWebApplicationFactory : WebApplicationFactory<Program>
     {

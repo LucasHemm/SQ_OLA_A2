@@ -1,14 +1,8 @@
-﻿using System.Net.Http;
-using System.Threading.Tasks;
-using Xunit;
-using Microsoft.AspNetCore.Mvc.Testing;
-using SQL_OLA_A2;
+﻿using System.Net;
 using System.Net.Http.Json;
-using System.Collections.Generic;
-using System.Net;
-using System;
+using SQL_OLA_A2;
 
-namespace SQL_OLA_A2.Tests
+namespace SQ_OLA_A2_TEST
 {
     public class TaskApiTests : IClassFixture<TestWebApplicationFactory>
     {

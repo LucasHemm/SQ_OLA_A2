@@ -1,6 +1,4 @@
 ﻿using Moq;
-using Xunit;
-using System;
 using Microsoft.EntityFrameworkCore;
 using SQL_OLA_A2;
 using Task = SQL_OLA_A2.Task;

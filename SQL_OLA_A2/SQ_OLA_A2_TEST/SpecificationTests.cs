@@ -2,7 +2,7 @@
 using SQL_OLA_A2;
 using Task = SQL_OLA_A2.Task;
 
-namespace ola_sq_a1;
+namespace SQ_OLA_A2_TEST;
 
 public class SpecificationTests
 {
