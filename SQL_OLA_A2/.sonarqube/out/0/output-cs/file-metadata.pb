@@ -1,0 +1,15 @@
+€
+uC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\obj\Debug\net8.0\SQL_OLA_A2.AssemblyInfo.csutf-8”
+ˆC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\obj\Debug\net8.0\SQL_OLA_A2.MvcApplicationPartsAssemblyInfo.csutf-8•
+‰C:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.csutf-8‚
+wC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\obj\Debug\net8.0\SQL_OLA_A2.GlobalUsings.g.csutf-8`
+WC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\TaskMapper.csutf-8`
+WC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\TaskFacade.csutf-8]
+TC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\TaskDto.csutf-8Z
+QC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\Task.csutf-8]
+TC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\Program.csutf-8„
+yC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\Migrations\ApplicationDbContextModelSnapshot.csutf-8‚
+wC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\Migrations\20240911113544_Initial.Designer.csutf-8w
+nC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\Migrations\20240911113544_Initial.csutf-8p
+gC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\Controllers\TaskController.csutf-8j
+aC:\Users\marcu\OneDrive\Dokumenter\GitHub\SQ_OLA_A2\SQL_OLA_A2\SQL_OLA_A2\ApplicationDbContext.csutf-8
